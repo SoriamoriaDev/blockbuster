@@ -100,6 +100,20 @@ const Account = () => {
       </div>
 
       <div className="form-group">
+          <label>VIP Status:</label>
+          <input
+            disabled={!editting}
+            type='text'
+            name="VIP"
+            onChange={onChange}
+            value={inputs.VIP}
+            className="form-control form-control-lg"
+            placeholder="Status"
+            required
+            />
+      </div>
+
+      <div className="form-group">
         <label>Email:</label>
         <input
             disabled
