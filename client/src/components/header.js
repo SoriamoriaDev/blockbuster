@@ -36,9 +36,9 @@ class Header extends Component {
                         {/* <li className="nav-item">
                             <NavLink className="nav-link" to="/public">Public</NavLink>
                         </li> */}
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
                             <NavLink className="nav-link" to="/account">Account</NavLink>
-                        </li>
+                        </li> */}
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/movies">Movies</NavLink>	                       
                         </li>	                        

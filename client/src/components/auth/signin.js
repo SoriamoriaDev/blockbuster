@@ -22,7 +22,7 @@ const Signin = (props) => {
             <CenterCard363>
                 <div className='card'>
                 <h4 className="card-header">
-                    Sign In
+                    Log In
                 </h4>
                 <div className="card-body">
                 <form onSubmit={onSubmit}>
@@ -53,7 +53,7 @@ const Signin = (props) => {
                             type="submit"
                             className="btn btn-lg btn-light btn-block"
                             disabled={!dirty || submitting}>
-                            Sign In
+                            Log In
                         </button>
                     </div>
                 </form>

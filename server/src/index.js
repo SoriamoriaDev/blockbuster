@@ -31,8 +31,8 @@ app.post('/signup', Authentication.signup)
 app.post('/signin', Authentication.signin)
 app.get('/auth-ping', Middlewares.loginRequired, (req, res) => res.send('connected'))
 app.use('/user', Middlewares.loginRequired, UserRouter)
-//app.use('/movies', Middlewares.loginRequired, MoviesRouter)
-app.use('/movies', MoviesRouter)
+app.use('/movies', Middlewares.loginRequired, MoviesRouter)
+//app.use('/movies', MoviesRouter)
 
 // Error Handling
 app.use((err, req, res, next) => {

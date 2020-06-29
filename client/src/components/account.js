@@ -12,6 +12,7 @@ const Account = () => {
     initialValues: {
         firstName: '',
         lastName: '',
+        VIP:'',
         email: '',
         password: ''
     },
@@ -28,7 +29,8 @@ const Account = () => {
     setInputs({
       firstName: r.data.name.first,
       lastName: r.data.name.last,
-      email: r.data.email
+      email: r.data.email,
+      VIP: r.data.VIP
     })
     setErrMsg();
   });

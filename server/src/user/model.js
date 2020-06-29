@@ -17,6 +17,7 @@ const Schema = new mongoose.Schema({
         default: false
     },
     password: String,
+    VIP: Boolean,
     phone: {
         number: {
             type: String

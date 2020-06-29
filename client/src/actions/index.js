@@ -18,12 +18,13 @@ export function signUserIn(data) {
         axios
             .post(`/signin`, data)
             .then(res => {
-                //let temp = JSON.stringify(res);
-                //console.log("Data : " + temp);
+                let temp = JSON.stringify(res);
+                console.log("Data : " + temp);
                 dispatch({type: AUTH_USER})
                 localStorage.setItem('auth_jwt_token', res.data.token);
                 window.location = '/#movies';
                 axios.defaults.headers.common['Authorization'] = localStorage.getItem('auth_jwt_token');
+                if(res.data.VIP == true){localStorage.setItem('VIP', true)}
             })
             .catch(error => {
                 console.log(error);
@@ -54,6 +55,7 @@ export function signUserOut() {
     return function (dispatch) {
         dispatch({type: UNAUTH_USER})
         localStorage.removeItem('auth_jwt_token');
+        localStorage.removeItem('VIP');
     }
 }
 

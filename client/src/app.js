@@ -35,7 +35,7 @@ ReactDOM.render(
           <Route exact path="/" component= {Home} />
           {/*<Route path="/public" component= {Public} />*/}
           <Route path="/account" component= {RequireAuth(Account)} />
-          <Route path="/movies" component= {Movies} />
+          <Route path="/movies" component= {RequireAuth(Movies)} />
           <Route path="/signin" component= {Signin} />
           <Route path="/signup" component= {Signup} />
           <Route path="/signout" component= {Signout} />

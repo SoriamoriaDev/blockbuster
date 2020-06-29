@@ -64,7 +64,8 @@ export default {
                             }
     
                             res.send({
-                                token: token.generateToken(existingUser)
+                                token: token.generateToken(existingUser),
+                                VIP: existingUser.VIP
                             })
                     })
                 }

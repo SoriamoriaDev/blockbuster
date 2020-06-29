@@ -9,7 +9,8 @@ export default {
                 name: {
                     first: req.body.firstName, 
                     last: req.body.lastName
-                }
+                },
+                VIP: req.body.VIP
             };
             delete newProfile.email;
             delete newProfile.phone;
