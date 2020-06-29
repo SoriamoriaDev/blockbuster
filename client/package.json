@@ -9,8 +9,6 @@
     "build": "rm -rf ../docs && webpack --config webpack.prod.js && npm run copy:static",
     "copy:static": "cp -rf ./src/statics ../docs"
   },
-  "author": "amazingandyyy",
-  "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",

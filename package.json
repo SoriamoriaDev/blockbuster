@@ -1,5 +1,5 @@
 {
-  "name": "mern",
+  "name": "blockbuster",
   "version": "2.1.1",
   "description": "CRUD in MongoDB, Express, React/Hooks, Node",
   "main": "index.js",
@@ -15,19 +15,11 @@
     "npm": ">=6.0.0"
   },
   "engineStrict": true,
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amazingandyyy/mern.git"
-  },
+
   "keywords": [
     "react"
   ],
-  "author": "Amazingandyyy <amazingandyyy@gmail.com> (Andy Chen)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/amazingandyyy/mern/issues"
-  },
-  "homepage": "https://github.com/amazingandyyy/mern#readme",
+
   "devDependencies": {
     "@amazingandyyy/git-hooks": "^0.1.0",
     "eslint": "^4.14.0",

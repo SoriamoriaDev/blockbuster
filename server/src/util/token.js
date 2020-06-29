@@ -13,6 +13,7 @@ export default {
     verifyToken: function (token, cb) {
         const decode = jwt.decode(token, config.jwt_secret)
         if (!decode) return cb(new Error('Token is not verified.'));
+        console.log("JWT has been verified and decoded !");
         cb(null, decode);
     }
 }
