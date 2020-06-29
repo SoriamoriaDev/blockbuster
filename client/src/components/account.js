@@ -20,6 +20,7 @@ const Account = () => {
     },
     debug: false
   }
+
   const { setInputs, onSubmit, onChange, inputs, dirty, reset } = useForm('AdvanceForm', options);
   const tryConnect = () => axios.get(`/auth-ping`).then(r=> setStatus(r.data));
   const getUserProfile = () => axios.get(`/user/profile`).then(r=> {
@@ -31,23 +32,29 @@ const Account = () => {
     })
     setErrMsg();
   });
+
   const updateUserProfile = () => {
+    console.log("Inputs", inputs);
     axios.post(`/user/profile`, inputs)
       .then(() => cancelForm())
       .catch(e => setErrMsg(`${e.response.data}. Please try it again.`));
   }
+
   useEffect(() => {
     tryConnect();
     getUserProfile();
   }, [])
+  
   const switchEditting = () => {
     setEditting(!editting)
   }
+
   const cancelForm = () => {
     setEditting(false)
     reset();
     getUserProfile();
   }
+
   const renderButtons = () => {
     if(editting){
       return (<div className="form-group">
@@ -58,6 +65,7 @@ const Account = () => {
       return (<button className="btn btn-light btn-lg btn-block" onClick={switchEditting}>Update Information</button>)
     }
   }
+
   const renderProfileForm = () => {
     return (
       <form onSubmit={onSubmit}>
@@ -123,6 +131,7 @@ const Account = () => {
       </div>
     </form>);
   }
+
   return (
     <CenterCard363>
       <div className='card border-secondary'>

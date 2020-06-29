@@ -18,9 +18,11 @@ export function signUserIn(data) {
         axios
             .post(`/signin`, data)
             .then(res => {
+                //let temp = JSON.stringify(res);
+                //console.log("Data : " + temp);
                 dispatch({type: AUTH_USER})
                 localStorage.setItem('auth_jwt_token', res.data.token);
-                window.location = '/#account';
+                window.location = '/#movies';
                 axios.defaults.headers.common['Authorization'] = localStorage.getItem('auth_jwt_token');
             })
             .catch(error => {
@@ -38,7 +40,7 @@ export function signUserUp(userObj) {
             .then(res => {
                 dispatch({type: AUTH_USER})
                 localStorage.setItem('auth_jwt_token', res.data.token);
-                window.location = '/#account';
+                window.location = '/#movies';
                 axios.defaults.headers.common['Authorization'] = localStorage.getItem('auth_jwt_token');
             })
             .catch(error => {

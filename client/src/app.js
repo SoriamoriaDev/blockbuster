@@ -7,11 +7,12 @@ import reduxThunk from 'redux-thunk';
 
 import App from './components/app';
 import Home from './components/home';
-import Public from './components/public';
+//import Public from './components/public';
 import Account from './components/account';
 import Signin from './components/auth/signin';
 import Signup from './components/auth/signup';
-import Signout from './components/auth/signout'
+import Signout from './components/auth/signout';
+import Movies from './components/movies';
 import RequireAuth from './components/auth/require_auth';
 import reducers from './reducers';
 import { AUTH_USER } from './actions/types';
@@ -19,7 +20,7 @@ import { AUTH_USER } from './actions/types';
 import '../style/style.scss'
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
-const store = createStoreWithMiddleware(reducers)
+const store = createStoreWithMiddleware(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 const token = localStorage.getItem('auth_jwt_token');
 
 // if we have a token, consider the user to be signed in
@@ -32,8 +33,9 @@ ReactDOM.render(
       <App>
         <Switch>
           <Route exact path="/" component= {Home} />
-          <Route path="/public" component= {Public} />
+          {/*<Route path="/public" component= {Public} />*/}
           <Route path="/account" component= {RequireAuth(Account)} />
+          <Route path="/movies" component= {Movies} />
           <Route path="/signin" component= {Signin} />
           <Route path="/signup" component= {Signup} />
           <Route path="/signout" component= {Signout} />
